@@ -1,4 +1,5 @@
-import logo from './logo.svg';
+import Card from './components/Card';
+
 import './App.css';
 
 function App() {
@@ -11,26 +12,11 @@ function App() {
             Quantas pessoas vão participar?
         </h3>
         <div className="row-first">
-            <div className="input-group"><label for="men">Homens</label><input type="number" id="men" value="0" className="input-valid"/>
-                <div className="button-group">
-                    <button className="input-group__button--small">-</button>
-                    <button className="input-group__button--small">+</button>
-                </div>
-            </div>
-            <div className="input-group">
-                <label for="women">Mulheres</label><input type="number" id="women" value="0" className="input-valid"/>
-                <div className="button-group"><button className="input-group__button--small">-</button>
-                    <button className="input-group__button--small">+</button>
-                </div>
-            </div>
-            <div className="input-group">
-                <label for="kid">Crianças</label>
-                <input type="number" id="kid" value="0" className="input-valid"/>
-                <div className="button-group"><button className="input-group__button--small">-</button>
-                    <button className="input-group__button--small">+</button>
-                </div>
-            </div>
+            <Card tituloDoCard = "Homem"/>
+            <Card tituloDoCard = "Mulher"/>
+            <Card tituloDoCard = "Criança"/>       
         </div>
+        
         <div className="row">
             <div>
                 <p id="invalid-input" style={{ visibility: "hidden" }}>Por favor, insira somente números!</p>
