@@ -396,3 +396,17 @@ input:checked+.slider:before {
   font-weight:900;
   font-size: larger;
 }
+
+.result {
+  font-size: larger;
+  color: white;
+ padding-top: 25px;
+  
+}
+
+.quantities {
+  font-size: larger;
+  color: white;
+  padding-top: 25px;
+  
+}

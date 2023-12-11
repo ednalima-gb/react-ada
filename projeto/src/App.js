@@ -1,6 +1,10 @@
-import Calculator from './components/Calculator';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+//import Calculator from '../src/components/Calculator';
 
 import './App.css';
+import CalculatorPage from './pages/CalculatorPage';
+import GuestPage from './pages/GuestPage';
+import ResultPage from './pages/ResultPage';
 
 function App() {
   return (
@@ -11,7 +15,17 @@ function App() {
             <br/><br/>
             Quantas pessoas vão participar?
         </h3>
-        <Calculator/>
+
+        <div className="todo-app">
+        <Router>
+          <Routes>
+              <Route path="/" element={<CalculatorPage/>}>
+                <Route index element={<GuestPage/>}/>
+                <Route path="result" element={<ResultPage/>}/>
+              </Route>
+          </Routes>
+        </Router>
+      </div>
         
     </div>
     <div className="theme-container"><label id="label-theme-text" for="input-theme">Tema Escuro</label>
