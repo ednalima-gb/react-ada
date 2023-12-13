@@ -4,23 +4,22 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import CalculatorPage from './pages/CalculatorPage';
 import GuestPage from './pages/GuestPage';
+import RegisterPage from './pages/RegisterPage';
 import ResultPage from './pages/ResultPage';
 
 function App() {
   return (
     <div className="container">
-    <h1>Churrascômetro</h1>
+    {/* <PrincipalTitle/> */}
     <div className="calculator">
-        <h3>Precisa de uma ajudinha com o churrasco? 
-            <br/><br/>
-            Quantas pessoas vão participar?
-        </h3>
+        {/* <SecondTitle/> */}
 
         <div className="todo-app">
         <Router>
           <Routes>
               <Route path="/" element={<CalculatorPage/>}>
                 <Route index element={<GuestPage/>}/>
+                <Route path="register" element={<RegisterPage/>}/>
                 <Route path="result" element={<ResultPage/>}/>
               </Route>
           </Routes>

@@ -1,4 +1,6 @@
 import { Link, useOutletContext } from 'react-router-dom';
+import PrincipalTitle from '../components/PrincipalTitle';
+import SecondTitle from '../components/SecondTitle';
 import Card from '../components/Card';
 
 
@@ -40,18 +42,18 @@ const GuestPage = () => {
         return `${data.homem + data.mulher + data.crianca}`
     }
 
-    const detalhesPessoas = () => {
-        return `${data.homem} homem(ns), ${data.mulher} mulher(es) e ${data.crianca} criança(s).`
-    }
 
     const manipuladorClick = () => {
         setData((prevData) => ({...prevData, resultado1: totalPessoas()}));
-        setData((prevData) => ({...prevData, resultado2: detalhesPessoas()}));
-    }
+    //     setData((prevData) => ({...prevData, resultado2: detalhesPessoas()}));
+     }
     
 
     return (
+    
         <div className="row">
+            <PrincipalTitle/>
+            <SecondTitle/>
             <div className="row-first">
                 <Card label= "Homem" data={data.homem} onDataChangeMais = {aumentarHomem} onDataChangeMenos = {diminuirHomem} />
                 <Card label= "Mulher" data={data.mulher} onDataChangeMais = {aumentarMulher} onDataChangeMenos = {diminuirMulher} />
@@ -60,9 +62,11 @@ const GuestPage = () => {
         <div>
             <p id="invalid-input" style={{ visibility: "hidden" }}>Por favor, insira somente números!</p>
             <p id="no-input" style={{visibility: "hidden;"}}>Por favor, selecione a quantidade de pessoas!</p>
-            <Link to="/result">
+            <Link to="/register" className="default-button" onClick={manipuladorClick}>Calcular</Link>
+            
+            {/* <Link to="/result">
                 <a href="/result" className="default-button" onClick={manipuladorClick}>Calcular</a>
-            </Link>
+            </Link> */}
             
             
         </div>
