@@ -79,6 +79,7 @@ const GuestPage = () => {
     return (
     
         <div className="row">
+
             <PrincipalTitle/>
             <SecondTitle/>
             <div className="row-first">
