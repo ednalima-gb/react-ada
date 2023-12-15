@@ -2,6 +2,7 @@ import { Link, useOutletContext } from 'react-router-dom';
 import PrincipalTitle from '../components/PrincipalTitle';
 import SecondTitle from '../components/SecondTitle';
 import Card from '../components/Card';
+import PropTypes from 'prop-types';
 
 
 const GuestPage = () => {
@@ -17,6 +18,7 @@ const GuestPage = () => {
             setData((prevData) => ({...prevData, homem: data.homem - 1}));
         }
     }
+
 
     const aumentarMulher = (evento) => {
         setData((prevData) => ({...prevData, mulher: data.mulher + 1}));
@@ -47,7 +49,32 @@ const GuestPage = () => {
         setData((prevData) => ({...prevData, resultado1: totalPessoas()}));
     //     setData((prevData) => ({...prevData, resultado2: detalhesPessoas()}));
      }
+
+     //validações de tipos com proptypes
+
+    aumentarHomem.prototype = {
+        homem: PropTypes.number.isRequired
+    }
+
+    diminuirHomem.prototype = {
+        homem: PropTypes.number.isRequired
+    }
+
+    aumentarMulher.prototype = {
+        mulher: PropTypes.number.isRequired
+    }
     
+    diminuirMulher.prototype = {
+        mulher: PropTypes.number.isRequired
+    }
+
+    aumentarCrianca.prototype = {
+        crianca: PropTypes.number.isRequired
+    }
+
+    diminuirCrianca.prototype = {
+        crianca: PropTypes.number.isRequired
+    }
 
     return (
     

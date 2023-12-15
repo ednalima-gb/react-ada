@@ -1,6 +1,34 @@
 import { Link } from "react-router-dom";
+//import { useState } from "react";
 
 const RegisterPage = () => {
+
+    //const [isFormValid, setIsFormValid] = useState(false);
+
+    // function handleSubmit(event) {
+    //     event.preventDefault();
+
+    //    //Lógica para validar os campos do formulário
+    //     const name = document.getElementById("name").value;
+    //     const email = document.getElementById("email").value;
+    //     const postalCode = document.getElementById("postal-code").value;
+
+    //     const isNameValid = name.trim() !== "";
+    //     const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    //     const isPostalCodeValid = /^\d{5}$/.test(postalCode);
+
+    //     const isFormValid = isNameValid && isEmailValid && isPostalCodeValid;
+    //     setIsFormValid(isFormValid);
+
+    //     if (isFormValid) {
+    //                 // Redirecionar para a página "/result" se o formulário for válido
+    //                 window.location.href = "/result";
+    //             }
+       
+    // }
+
+
+
     return (
         <div class="container">
                 <h1>Churrascômetro</h1>
@@ -15,6 +43,10 @@ const RegisterPage = () => {
                                 <p id="invalid-email">Por favor, insira um e-mail válido!</p>
                                 <input type="number" id="postal-code" placeholder="Digite seu CEP" class="input-form" required/>
                                 <p id="error-postal-code">Por favor, insira um CEP válido!</p>
+                                {/* <button class="default-button" disabled={!isFormValid} onClick={(event) => handleSubmit(event) }>Cadastrar</button>  */}
+                                 <Link to="/result" class="default-button" >Cadastrar</Link>
+                                                                           
+                            
                             </form>
                             <div id="consent-input">
                                 <input type="checkbox" id="consent-checkbox" name="consentInput" checked="checked"/>
@@ -25,7 +57,10 @@ const RegisterPage = () => {
                     <div class="row">
                         <div>
                             {/* <a href="/result" class="default-button">Cadastrar</a> */}
-                            <Link to="/result" className="default-button">Cadastrar</Link>
+                            {/* <Link to="/result" className="default-button">
+
+                            </Link> */}
+                            {/* <button class="default-button" onSubmit={(event) => handleSubmit(event) }>Cadastrar</button> */}
                         </div>
                         <div id="nav-container">
                             <Link to="/">
@@ -51,4 +86,6 @@ const RegisterPage = () => {
     )
 }
 
+
 export default RegisterPage;
+
